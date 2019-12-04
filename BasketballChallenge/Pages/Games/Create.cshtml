@@ -1,0 +1,49 @@
+﻿@page
+@model BasketballChallenge.Pages.Games.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Game</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Game.DateofGame" class="control-label"></label>
+                <input asp-for="Game.DateofGame" class="form-control" />
+                <span asp-validation-for="Game.DateofGame" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Game.Location" class="control-label"></label>
+                <input asp-for="Game.Location" class="form-control" />
+                <span asp-validation-for="Game.Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Game.UserPaid" class="control-label"></label>
+                <input asp-for="Game.UserPaid" class="form-control" />
+                <span asp-validation-for="Game.UserPaid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Game.AmountPaid" class="control-label"></label>
+                <input asp-for="Game.AmountPaid" class="form-control" />
+                <span asp-validation-for="Game.AmountPaid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
